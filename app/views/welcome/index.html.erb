@@ -1,12 +1,6 @@
-<h1>Welcome</h1>
-<!-- <p>Please select a number from <%= @first_num %> to <%= @last_num %></p> -->
-
-<p>Click the button below to choose a random date location!</p>
-
+<h1 class="cover-heading">Welcome</h1>
+<p class="lead">Click the button below to choose a random date location!</p>
 <%= form_tag("venues/randvenue", method: "post") do %>
- <div>
-<!--     <%= text_field_tag(:num_venue) %>
- -->
-     <%= submit_tag("Random Date Generator") %>
-  </div>
+<%= submit_tag("Random Date Generator") %>
 <% end %>
+

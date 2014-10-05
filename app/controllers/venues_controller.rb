@@ -27,6 +27,14 @@ class VenuesController < ApplicationController
     @number_of_venues = @venues.length 
     @rand_num = rand(0..@venues.length-1)
     @venue = @venues[@rand_num.to_i]
+    require 'yelp'
+
+   @client = Yelp::Client.new({ consumer_key: 'sveivsVq6U9hYY804x3g7A',
+                            consumer_secret: 'qASDlUgWqMSWRx8wdlp6Dy261sc',
+                            token: 'NQmjMAOIR6BuIfOmsB-Sk1G7d8Ooi6-s',
+                            token_secret: 'Pa__OLzSTMaNVE9DQ5YrDyumhF0'
+                          })
+   @response = @client.business(@venue.name)
   end
 
   # POST /venues
